@@ -1,0 +1,9 @@
+Flask
+Flask-CORS
+Flask-JWT-Extended
+Flask-Migrate
+Flask-SQLAlchemy
+graphene
+graphql-server[flask]
+graphene-sqlalchemy==3.0.0b1
+passlib

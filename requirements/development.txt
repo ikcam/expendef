@@ -1,0 +1,5 @@
+-r base.txt
+coverage
+flake8
+pytest
+pytest-cov
