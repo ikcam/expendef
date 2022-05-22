@@ -21,15 +21,13 @@ class CategoryCreateMutation(graphene.Mutation):
     mutation ($txa: CategoryCreateInput!) {
         createCategory(categoryInput: $txa) {
             id
-            category {
-                parent {
-                    id
-                    name
-                }
+            parent {
+                id
                 name
-                color
-                description
             }
+            name
+            color
+            description
         }
     }
 
@@ -43,7 +41,7 @@ class CategoryCreateMutation(graphene.Mutation):
     }
     """
 
-    category = graphene.Field(CategoryType)
+    Output = CategoryType
 
     class Arguments:
         categoryInput = CategoryCreateInput(required=True)
@@ -81,15 +79,13 @@ class CategoryUpdateMutation(graphene.Mutation):
     mutation ($txa: CategoryUpdateInput!) {
         createCategory(categoryInput: $txa) {
             id
-            category {
-                parent {
-                    id
-                    name
-                }
+            parent {
+                id
                 name
-                color
-                description
             }
+            name
+            color
+            description
         }
     }
 
@@ -104,7 +100,7 @@ class CategoryUpdateMutation(graphene.Mutation):
     }
     """
 
-    category = graphene.Field(CategoryType)
+    Output = CategoryType
 
     class Arguments:
         categoryInput = CategoryUpdateInput(required=True)

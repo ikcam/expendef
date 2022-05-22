@@ -23,12 +23,10 @@ class UserCreateMutation(graphene.Mutation):
     # Create User
     mutation ($txa: UserCreateInput!) {
         createUser(categoryInput: $txa) {
-            user {
-                id
-                email
-                firstName
-                lastName
-            }
+            id
+            email
+            firstName
+            lastName
         }
     }
 
@@ -44,7 +42,7 @@ class UserCreateMutation(graphene.Mutation):
     }
     """
 
-    user = graphene.Field(UserType)
+    Output = UserType
 
     class Arguments:
         userInput = UserCreateInput(required=True)
@@ -106,7 +104,7 @@ class UserUpdateMutation(graphene.Mutation):
     }
     """
 
-    user = graphene.Field(UserType)
+    Output = UserType
 
     class Arguments:
         userInput = UserUpdateInput(required=True)
